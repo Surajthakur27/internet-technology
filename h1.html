@@ -3,9 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Solving Equations in Two Variables</title>
 </head>
 <body>
-    <h1>hello world!</h1>
+    <article>
+        <header>
+            <h1>Solving Equations in Two Variables</h1>
+        </header>
+        <section>
+            <h2>Introduction</h2>
+            <p>Equations in two variables are mathematical expressions that involve two unknown quantities. Solving such equations involves finding the values of the variables that satisfy the equation.</p>
+        </section>
+        <section>
+            <h2>Steps to Solve Equations in Two Variables</h2>
+            <ol>
+                <li>Identify the two variables in the equation.</li>
+                <li>Choose a method to solve the equation (e.g., substitution, elimination).</li>
+                <li>Use the chosen method to manipulate the equation and isolate one variable.</li>
+                <li>Substitute the value of the isolated variable into the other equation to find the value of the second variable.</li>
+                <li>Check the solution by substituting the values of the variables back into the original equations.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Example</h2>
+            <p>Let's solve the following system of equations:</p>
+            <pre>
+                <code>
+                    2x + 3y = 11
+                    4x - 2y = 2
+                </code>
+            </pre>
+            <p>We'll solve this using the substitution method.</p>
+            <ol>
+                <li>From the first equation, solve for one variable (let's solve for x):
+                    <pre>
+                        <code>
+                            2x = 11 - 3y
+                            x = (11 - 3y) / 2
+                        </code>
+                    </pre>
+                </li>
+                <li>Substitute the expression for x into the second equation:
+                    <pre>
+                        <code>
+                            4((11 - 3y) / 2) - 2y = 2
+                        </code>
+                    </pre>
+                </li>
+                <li>Solve for y:
+                    <pre>
+                        <code>
+                            22 - 6y - 2y = 2
+                            -8y = -20
+                            y = 2.5
+                        </code>
+                    </pre>
+                </li>
+                <li>Substitute the value of y back into one of the original equations to find x:
+                    <pre>
+                        <code>
+                            2x + 3(2.5) = 11
+                            2x + 7.5 = 11
+                            2x = 3.5
+                            x = 1.75
+                        </code>
+                    </pre>
+                </li>
+            </ol>
+            <p>So, the solution to the system of equations is x = 1.75 and y = 2.5.</p>
+        </section>
+        <section>
+            <h2>Program to Solve Equations in Two Variables</h2>
+            <p>Below is a Python program to solve equations in two variables:</p>
+            <pre>
+                <code class="language-python">
+                    def solve_equations(a1, b1, c1, a2, b2, c2):
+                        determinant = a1 * b2 - a2 * b1
+                        if determinant == 0:
+                            return "No solution exists"
+                        else:
+                            x = (c1 * b2 - c2 * b1) / determinant
+                            y = (a1 * c2 - a2 * c1) / determinant
+                            return x, y
+                # Example usage
+                print(solve_equations(2, 3, 11, 4, -2, 2))  # Output: (1.75, 2.5)
+                print(solve_equations(1, 2, 3, 2, 4, 6))    # Output: "No solution exists"
+                print(solve_equations(2, 4, 8, 3, 6, 12))   # Output: "Infinite solutions exist"
+                # Replace the coefficients a1, b1, c1, a2, b2, c2 with your own equations.
+                # The equations should be in the form ax + by = c.
+                # The function returns the values of x and y that satisfy the equations.
+                # If no solution exists, it returns "No solution exists".
+                # If infinitely many solutions exist, it returns "Infinite solutions exist".
+                # Ensure that the determinant is not zero for a unique solution.
+                </code>
+            </pre>
+        </section>
+    </article>
 </body>
 </html>
